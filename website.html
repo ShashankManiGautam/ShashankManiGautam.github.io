@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shashank Mani Gautam — Robotics Researcher [Option C: hybrid]</title>
+<meta name="description" content="Shashank Mani Gautam — robotics researcher at SMSS Lab, IIT Kanpur. Field robotics, estimation and control, UGV–UAV systems, manipulators.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Crimson+Pro:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #EEF0F2;          /* cool engineering gray */
+    --panel: #FFFFFF;
+    --ink: #16202B;          /* deep navy ink */
+    --ink-soft: #46566A;
+    --line: #C9D1D9;
+    --accent: #E8590C;       /* safety / anodized orange */
+    --accent-soft: #FBE4D5;
+    --mono: 'IBM Plex Mono', ui-monospace, monospace;
+    --display: 'Crimson Pro', Georgia, serif;
+    --body: 'Source Serif 4', Georgia, serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 17.5px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+
+  /* ---- Nav ---- */
+  nav {
+    position: sticky; top: 0; z-index: 10;
+    background: rgba(238,240,242,.92); backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 56px; }
+  .nav-name { font-family: var(--display); font-weight: 700; font-size: 15px; letter-spacing: .01em; color: var(--ink); }
+  .nav-name:hover { text-decoration: none; color: var(--accent); }
+  .nav-links { display: flex; gap: 22px; }
+  .nav-links a { font-family: var(--mono); font-size: 12.5px; color: var(--ink-soft); }
+  .nav-links a:hover { color: var(--accent); text-decoration: none; }
+
+  /* ---- Hero ---- */
+  header.hero { padding: 72px 0 40px; }
+  .status-line {
+    font-family: var(--mono); font-size: 12.5px; color: var(--ink-soft);
+    display: flex; align-items: center; gap: 8px; margin-bottom: 22px;
+  }
+  .status-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
+  h1 {
+    font-family: var(--display); font-weight: 700;
+    font-size: clamp(34px, 6vw, 56px); line-height: 1.06; letter-spacing: -0.02em;
+    max-width: 15ch;
+  }
+  .hero p.lede {
+    margin-top: 22px; max-width: 62ch; font-size: 17px; color: var(--ink-soft);
+  }
+  .hero .links { margin-top: 26px; display: flex; flex-wrap: wrap; gap: 12px; }
+  .btn {
+    font-family: var(--mono); font-size: 13px; font-weight: 500;
+    padding: 9px 16px; border: 1px solid var(--ink); color: var(--ink);
+    background: transparent; display: inline-block;
+  }
+  .btn:hover { background: var(--ink); color: var(--bg); text-decoration: none; }
+  .btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .btn.primary:hover { background: #C74A08; border-color: #C74A08; color: #fff; }
+
+  /* ---- Telemetry strip (signature) ---- */
+  .telemetry {
+    margin: 52px 0 0; border-top: 2px solid var(--ink); border-bottom: 1px solid var(--line);
+    display: grid; grid-template-columns: repeat(4, 1fr);
+  }
+  .telemetry div { padding: 18px 14px 16px; border-right: 1px solid var(--line); }
+  .telemetry div:last-child { border-right: 0; }
+  .telemetry .val {
+    font-family: var(--mono); font-weight: 600; font-size: clamp(18px, 2.6vw, 26px);
+    color: var(--ink); display: block;
+  }
+  .telemetry .val em { color: var(--accent); font-style: normal; }
+  .telemetry .lbl { font-family: var(--mono); font-size: 11px; color: var(--ink-soft); letter-spacing: .04em; text-transform: uppercase; }
+
+  /* ---- Sections ---- */
+  section { padding: 64px 0 8px; }
+  .topic {
+    font-family: var(--mono); font-size: 13px; font-weight: 500; color: var(--accent);
+    margin-bottom: 6px;
+  }
+  h2 {
+    font-family: var(--display); font-weight: 600; font-size: 28px; letter-spacing: -0.01em;
+    margin-bottom: 28px;
+  }
+
+  /* ---- Project cards ---- */
+  .project {
+    background: var(--panel); border: 1px solid var(--line); border-left: 3px solid var(--ink);
+    padding: 26px 28px; margin-bottom: 18px;
+  }
+  .project:hover { border-left-color: var(--accent); }
+  .proj-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px 14px; margin-bottom: 4px; }
+  .project h3 { font-family: var(--display); font-weight: 600; font-size: 19px; }
+  .tag {
+    font-family: var(--mono); font-size: 10.5px; letter-spacing: .05em; text-transform: uppercase;
+    padding: 2px 8px; border: 1px solid var(--line); color: var(--ink-soft);
+  }
+  .tag.hw { border-color: var(--accent); color: var(--accent); background: var(--accent-soft); }
+  .proj-meta { font-family: var(--mono); font-size: 12px; color: var(--ink-soft); margin-bottom: 12px; }
+  .project p { color: var(--ink-soft); font-size: 15px; max-width: 72ch; }
+  .project .result {
+    margin-top: 12px; padding: 10px 14px; background: var(--bg);
+    font-family: var(--mono); font-size: 13px; color: var(--ink);
+    border-left: 2px solid var(--accent);
+  }
+  .proj-links { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 16px; }
+  .proj-links a { font-family: var(--mono); font-size: 13px; }
+  .stack { margin-top: 12px; font-family: var(--mono); font-size: 12px; color: var(--ink-soft); }
+  .stack span { color: var(--ink); }
+
+  /* ---- Publications ---- */
+  .pub { border-bottom: 1px solid var(--line); padding: 18px 0; }
+  .pub:last-child { border-bottom: 0; }
+  .pub .venue {
+    font-family: var(--mono); font-size: 11.5px; letter-spacing: .04em; text-transform: uppercase;
+    color: var(--accent); font-weight: 500;
+  }
+  .pub h3 { font-family: var(--display); font-weight: 600; font-size: 16.5px; margin: 4px 0 3px; }
+  .pub .authors { font-size: 14px; color: var(--ink-soft); }
+  .pub .authors b { color: var(--ink); font-weight: 600; }
+  .pub .pub-links { margin-top: 6px; font-family: var(--mono); font-size: 13px; display: flex; gap: 16px; }
+
+  /* ---- About / skills ---- */
+  .about-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 40px; }
+  .about-grid p { color: var(--ink-soft); margin-bottom: 14px; max-width: 62ch; }
+  .about-grid p b { color: var(--ink); }
+  .skill-block { margin-bottom: 18px; }
+  .skill-block .lbl {
+    font-family: var(--mono); font-size: 11px; letter-spacing: .05em; text-transform: uppercase;
+    color: var(--ink-soft); margin-bottom: 5px;
+  }
+  .skill-block .items { font-size: 14px; color: var(--ink); line-height: 1.7; }
+
+  /* ---- Footer ---- */
+  footer { margin-top: 72px; border-top: 2px solid var(--ink); padding: 32px 0 48px; }
+  .foot-inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; align-items: baseline; }
+  footer .contact { font-family: var(--mono); font-size: 13px; }
+  footer .contact a { display: inline-block; margin-right: 18px; }
+  footer .fine { font-family: var(--mono); font-size: 11.5px; color: var(--ink-soft); }
+
+  @media (max-width: 720px) {
+    .telemetry { grid-template-columns: repeat(2, 1fr); }
+    .telemetry div:nth-child(2) { border-right: 0; }
+    .telemetry div:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+    .about-grid { grid-template-columns: 1fr; }
+    .nav-links { gap: 14px; }
+    .nav-links a:nth-child(n+4) { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-inner">
+    <a class="nav-name" href="#top">S. M. Gautam</a>
+    <div class="nav-links">
+      <a href="#projects">/projects</a>
+      <a href="#publications">/publications</a>
+      <a href="#about">/about</a>
+      <a href="#contact">/contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero wrap" id="top">
+  <div class="status-line">
+    <span class="status-dot"></span>
+    <span>PROJECT ENGINEER · SMSS LAB, IIT KANPUR · SEEKING PhD POSITIONS 2027</span>
+  </div>
+  <h1>I build field robots that work outside the lab.</h1>
+  <p class="lede">
+    I'm Shashank Mani Gautam, a robotics researcher at the Smart Materials, Structures and Systems Lab,
+    IIT Kanpur, working with Prof. Bishakh Bhattacharya. My work spans estimation and control for
+    ground–aerial robot teams — skid-steer UGVs, precision-landing UAVs, visual-inertial navigation —
+    and reconfigurable manipulators, taken from formulation to validated hardware.
+  </p>
+  <div class="links">
+    <a class="btn primary" href="assets/Shashank_Mani_Gautam_CV.pdf">Download CV</a>
+    <a class="btn" href="https://github.com/ShashankManiGautam">GitHub</a>
+    <a class="btn" href="https://scholar.google.com/citations?user=RcWtiNwAAAAJ">Google Scholar</a>
+    <a class="btn" href="https://www.linkedin.com/in/shashank-mani-gautam/">LinkedIn</a>
+  </div>
+
+  <div class="telemetry" aria-label="Key results">
+    <div><span class="val"><em>98.8%</em></span><span class="lbl">heading-error reduction, skid-steer odometry</span></div>
+    <div><span class="val">GPS-denied</span><span class="lbl">indoor UAV flight via MSCKF VIO</span></div>
+    <div><span class="val">1 patent</span><span class="lbl">filed · reconfigurable manipulator</span></div>
+    <div><span class="val">4 robots</span><span class="lbl">deployed on real hardware</span></div>
+  </div>
+</header>
+
+<section id="projects" class="wrap">
+  <div class="topic">/projects</div>
+  <h2>Selected work</h2>
+
+  <div class="project">
+    <div class="proj-head">
+      <h3>Skid-Steer UGV — Autonomous Navigation</h3>
+      <span class="tag hw">Real hardware</span>
+      <span class="tag">Estimation</span><span class="tag">Control</span>
+    </div>
+    <div class="proj-meta">SMSS Lab, IIT Kanpur · 2025–present · 0.8 m × 0.9 m platform</div>
+    <p>
+      Full autonomous navigation stack for a skid-steer ground vehicle used in power-substation
+      inspection. I diagnosed skid-induced lateral wheel slip as the dominant odometry error source
+      and corrected it by fusing wheel-velocity odometry with IMU orientation, feeding AMCL and Nav2.
+      Includes a custom <code>ros2_control</code> hardware interface for USB Maxon motors with
+      serial-number-based node binding that survives USB re-enumeration on every power cycle.
+      LTV-LQR and MPC trajectory trackers benchmarked in simulation; MPPI navigation deployment in progress.
+    </p>
+    <div class="result">90° turn heading error: 27.8% (wheel-only) → 0.3% after IMU fusion · lateral drift 0.006 m over 0.9 m</div>
+    <div class="stack">Stack: <span>ROS2 · Nav2 · AMCL · ros2_control · RPLIDAR A1 · C++ / Python</span></div>
+  </div>
+
+  <div class="project">
+    <div class="proj-head">
+      <h3>UAV Precision Landing on a Moving UGV</h3>
+      <span class="tag hw">Real hardware</span>
+      <span class="tag">Guidance &amp; Control</span>
+    </div>
+    <div class="proj-meta">SMSS Lab, IIT Kanpur · 2025–present · Holybro X500 · Pixhawk 6c / PX4</div>
+    <p>
+      Guidance and control for autonomous landing of a PX4 UAV on a moving ground vehicle.
+      Designed and compared PID vs. LQR landing guidance in Gazebo — LQR, tuned via a Q/R sweep,
+      gave smoother velocity commands and lower overshoot than the best hand-tuned PID, validated
+      through sensitivity and control-effort analysis. A relative-positioning controller is
+      flight-tested on the real drone; LTV-LQR/MPC hardware transfer is ongoing.
+    </p>
+    <div class="result">LQR outperformed hand-tuned PID on overshoot and command smoothness across the Q/R sweep</div>
+    <div class="stack">Stack: <span>PX4 · Gazebo · ROS2 · MAVROS · LQR / PID</span></div>
+  </div>
+
+  <div class="project">
+    <div class="proj-head">
+      <h3>Visual-Inertial Odometry for GPS-Denied Flight</h3>
+      <span class="tag hw">Real hardware</span>
+      <span class="tag">State estimation</span>
+    </div>
+    <div class="proj-meta">SMSS Lab, IIT Kanpur · 2025–present · Intel RealSense</div>
+    <p>
+      MSCKF-based visual-inertial odometry, first integrated in a custom Gazebo power-substation
+      world (RealSense model on a PX4 drone), then deployed on the real UAV — enabling position-mode
+      flight indoors with no GPS. The estimator's sliding window was extended to 20 clones (vs. the
+      default 11) to keep scarce features observable over a longer baseline in the feature-sparse
+      substation environment; ZUPT suppresses drift during stationary phases.
+    </p>
+    <div class="result">GPS-denied indoor flight: ~10–20 m exploratory path flown and returned to start on real hardware</div>
+    <div class="stack">Stack: <span>MSCKF · OpenVINS-style pipeline · RealSense · PX4 · Gazebo</span></div>
+  </div>
+
+  <div class="project">
+    <div class="proj-head">
+      <h3>Modular Reconfigurable Manipulator</h3>
+      <span class="tag hw">Real hardware</span>
+      <span class="tag">Design</span><span class="tag">Patent filed</span>
+    </div>
+    <div class="proj-meta">IIT Ropar · 2024–2025 · Indian Patent IN202511099317 A1 (filed)</div>
+    <p>
+      A novel modular, reconfigurable robotic manipulator for mobile applications — designed,
+      3D-printed, and driven on real Dynamixel hardware. Built a ROS2 library that auto-generates
+      URDFs from task-specific manipulator configurations, eliminating manual re-modelling every
+      time the arm is reconfigured, plus a custom real-time Dynamixel control interface.
+    </p>
+    <div class="result">Patent filed: Reconfigurable Manipulator Assembly · IN202511099317 A1</div>
+    <div class="proj-links">
+      <a href="https://drive.google.com/file/d/1h30XV1lGVs5Jc31Oe1XPkMvlCoQZQJ1Q/view?usp=drive_link">▸ Demo video</a>
+    </div>
+    <div class="stack">Stack: <span>ROS2 · URDF generation · Dynamixel · Raspberry Pi · SOLIDWORKS</span></div>
+  </div>
+
+  <div class="project">
+    <div class="proj-head">
+      <h3>Optimal Design of a Knee Exoskeleton</h3>
+      <span class="tag hw">Real hardware</span>
+      <span class="tag">Optimization</span>
+    </div>
+    <div class="proj-meta">M.Tech Thesis · IIT Ropar · 2023–2024 · arXiv:2409.02635</div>
+    <p>
+      Nonlinear constrained design optimization of a lower-limb knee exoskeleton via interior-point
+      methods. Because optimizer-feasible local minima could still be physically infeasible for the
+      mechanism, I built an independent geometric simulation layer to evaluate real-world feasibility
+      and rank surviving solutions, followed by sensitivity analysis, a linear-actuator prototype,
+      and sit-to-stand gait validation.
+    </p>
+    <div class="result">Optimizer feasibility ≠ physical feasibility — resolved with a custom geometric feasibility layer</div>
+    <div class="proj-links">
+      <a href="https://doi.org/10.48550/arXiv.2409.02635">▸ arXiv preprint</a>
+      <a href="https://drive.google.com/file/d/1HdHv69g3lJtjIW7Ray35YaFQsHyDkted/view">▸ Thesis</a>
+    </div>
+    <div class="stack">Stack: <span>MATLAB · interior-point optimization · gait analysis</span></div>
+  </div>
+</section>
+
+<section id="publications" class="wrap">
+  <div class="topic">/publications</div>
+  <h2>Publications &amp; patents</h2>
+
+  <div class="pub">
+    <div class="venue">Patent · Filed</div>
+    <h3>Reconfigurable Manipulator Assembly</h3>
+    <div class="authors"><b>S. M. Gautam</b>, S. M. Patel, S. S. Padhee, A. Singla, E. Singla — Indian Patent IN202511099317 A1, 2026</div>
+  </div>
+
+  <div class="pub">
+    <div class="venue">ASME IMECE 2026 · Accepted, oral presentation</div>
+    <h3>An Intelligent AI-Enabled Autonomous Mobile Robot for Inspection of Power Substation Infrastructure</h3>
+    <div class="authors">A. Bhattacharjee, N. J. Baishya, P. S. Chauhan, S. Sen, <b>S. M. Gautam</b>, J. T. Jacob, B. Bhattacharya</div>
+  </div>
+
+  <div class="pub">
+    <div class="venue">ICoRD 2026 · Abstract submitted</div>
+    <h3>Design and Development of an Autonomous Skid-Steer UGV Integrable with a UAV for Substation Health Monitoring</h3>
+    <div class="authors"><b>S. M. Gautam</b>, J. T. Jacob, B. Bhattacharya</div>
+  </div>
+
+  <div class="pub">
+    <div class="venue">arXiv preprint · 2024</div>
+    <h3>Optimal Kinematic Synthesis and Prototype Development of a Knee Exoskeleton</h3>
+    <div class="authors"><b>S. M. Gautam</b>, E. Singla, A. Singla</div>
+    <div class="pub-links"><a href="https://doi.org/10.48550/arXiv.2409.02635">▸ arXiv:2409.02635</a></div>
+  </div>
+</section>
+
+<section id="about" class="wrap">
+  <div class="topic">/about</div>
+  <h2>About</h2>
+  <div class="about-grid">
+    <div>
+      <p>
+        I work at the intersection of <b>estimation, control, and mechanical design</b> for robots
+        that have to operate in the field — not just in simulation. My current focus at IIT Kanpur
+        is a collaborative UGV–UAV system for power-substation inspection, where I lead the
+        ground–aerial integration and mentor interns on controller development.
+      </p>
+      <p>
+        Before this, I designed a patented reconfigurable manipulator at IIT Ropar and completed an
+        M.Tech in Mechanics and Design (batch topper), where my thesis taught me a lesson I keep
+        returning to: an optimizer saying "feasible" and the physical world agreeing are two very
+        different things. Most of my work since has lived in that gap between formulation and hardware.
+      </p>
+      <p>
+        I implement my own estimators, controllers, and hardware interfaces rather than wrapping
+        existing packages — from MSCKF pipelines to CAN and USB motor interfaces. I'm currently
+        preparing PhD applications in <b>dynamics &amp; control, navigation, and robot design</b>
+        at universities in the UK and Europe.
+      </p>
+      <p>
+        Education: M.Tech, Mechanics &amp; Design, IIT Ropar (2024) · B.Tech, Mechanical Engineering,
+        NIT Kurukshetra (2021).
+      </p>
+    </div>
+    <div>
+      <div class="skill-block">
+        <div class="lbl">Estimation &amp; control</div>
+        <div class="items">PID · LQR/LQG · LTV-LQR · MPC · MPPI · MSCKF VIO · sensor fusion · ZUPT</div>
+      </div>
+      <div class="skill-block">
+        <div class="lbl">Software</div>
+        <div class="items">C++ · Python · MATLAB · ROS2 · ros2_control · Nav2 · Gazebo · PX4</div>
+      </div>
+      <div class="skill-block">
+        <div class="lbl">Optimization</div>
+        <div class="items">Nonlinear constrained optimization · interior-point methods · sensitivity analysis</div>
+      </div>
+      <div class="skill-block">
+        <div class="lbl">Hardware</div>
+        <div class="items">Maxon &amp; Dynamixel · CAN / USB interfaces · RPLIDAR · RealSense · Pixhawk · Raspberry Pi</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap foot-inner">
+    <div class="contact">
+      <a href="mailto:shashankmani2020@gmail.com">shashankmani2020@gmail.com</a>
+      <a href="https://github.com/ShashankManiGautam">GitHub</a>
+      <a href="https://scholar.google.com/citations?user=RcWtiNwAAAAJ">Scholar</a>
+      <a href="https://orcid.org/0009-0003-5755-539X">ORCID</a>
+      <a href="https://www.linkedin.com/in/shashank-mani-gautam/">LinkedIn</a>
+    </div>
+    <div class="fine">SMSS Lab · IIT Kanpur · last updated Jul 2026</div>
+  </div>
+</footer>
+
+</body>
+</html>
